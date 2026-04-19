@@ -12,7 +12,9 @@ const handlePointerLeave = (event) => {
 };
 
 const AniCard = ({
+  url,
   title,
+  title_english,
   status,
   episodes,
   images,
@@ -21,12 +23,8 @@ const AniCard = ({
   popularity,
 }) => {
   const truncatedStatus = status.split(" ")[0];
-  const truncatedTitle = title
-    .replace(/:/g, "")
-    .trim()
-    .split(/\s+/)
-    .slice(0, 2)
-    .join(" ");
+  const truncatedTitle = title_english || title;
+  truncatedTitle.replace(/:/g, "").trim().split(/\s+/).slice(0, 2).join(" ");
   if (episodes === null) episodes = "1000";
 
   const word = episodes === 1 ? "EPISODE" : "EPS";
@@ -52,28 +50,43 @@ const AniCard = ({
           {/* Content */}
           <div className="flex min-w-0 flex-1 flex-col">
             {/* Title */}
-            <h3 className="line-clamp-2 text-base font-extrabold text-white tracking-normal">
-              {truncatedTitle.toUpperCase()}
+            <h3 className="line-clamp-2 text-base font-extrabold text-white tracking-normal flex items-center gap-1">
+              <span className="truncate">{truncatedTitle.toUpperCase()}</span>
+
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={url}
+                className="inline-flex items-center justify-center text-muted hover:text-accent transition-colors"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  className="w-4 h-4 translate-y-px"
+                  fill="currentColor"
+                >
+                  <path d="M6 6v2h8.59L5 17.59 6.41 19 16 9.41V18h2V6z" />
+                </svg>
+              </a>
             </h3>
 
             {/* Chips */}
-            <div className="mt-5 flex flex-wrap gap-2">
+            <div className="mt-5 flex flex-wrap gap-2 font-edu-cursive text-xs font-extrabold text-white">
               {/* Status */}
-              <span className="flex items-center h-7 p-3 text-xs font-bold text-white border border-zinc-700 rounded-md bg-zinc-900">
+              <span className="flex items-center h-7 p-3 border border-zinc-700 rounded-md bg-zinc-900">
                 {truncatedStatus.toUpperCase()}
               </span>
 
               {/* Genre */}
-              <span className="flex items-center h-7 p-3 text-xs font-bold text-white border border-zinc-700 rounded-md bg-zinc-900">
-                {genres[0]?.name.toUpperCase()}
+              <span className="flex items-center h-7 p-3 border border-zinc-700 rounded-md bg-zinc-900">
+                {genres[0]?.name.toUpperCase().split(" ")[0]}
               </span>
               {/* Votes */}
-              <span className="flex items-center h-7 p-3 text-xs font-bold text-white border border-zinc-700 rounded-md bg-zinc-900">
+              <span className="flex items-center h-7 p-3 border border-zinc-700 rounded-md bg-zinc-900">
                 {popularity} VOTES
               </span>
 
               {/* Episodes */}
-              <span className="flex items-center h-7 p-3 text-xs font-bold text-white border border-zinc-700 bg-zinc-900 rounded-md">
+              <span className="flex items-center h-7 p-3 border border-zinc-700 bg-zinc-900 rounded-md">
                 {episodes} {word}
               </span>
             </div>
