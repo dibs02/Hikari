@@ -3,10 +3,12 @@ import Links from "./Links";
 
 const Header = () => {
   return (
-    <div className="sticky top-0 z-50 h-18 px-48 bg-zinc-900 flex justify-between items-center">
-      <LogoContainer />
-      <Links />
-    </div>
+    <header className="sticky top-0 z-50 bg-zinc-900/95 px-4 backdrop-blur-sm sm:px-6 lg:px-10">
+      <div className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 py-3">
+        <LogoContainer />
+        <Links />
+      </div>
+    </header>
   );
 };
 

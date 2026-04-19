@@ -1,9 +1,9 @@
 const Links = () => {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-2 sm:gap-4">
       <button
         type="button"
-        className="flex items-center justify-center w-9 h-9 rounded-lg bg-black bg-background text-foreground cursor-pointer"
+        className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg bg-black bg-background text-foreground"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@ const Links = () => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-sun w-4 h-4"
+          className="lucide lucide-sun h-4 w-4"
           aria-hidden="true"
         >
           <circle cx="12" cy="12" r="4"></circle>
@@ -32,7 +32,7 @@ const Links = () => {
 
       <a
         href="https://github.com/dibyajyoti-ganguly/Hikari"
-        className="cursor-pointer inline-flex shrink-0 items-center justify-center text-sm whitespace-nowrap h-8 gap-1.5 rounded-md px-3 font-bold bg-white text-main-foreground"
+        className="inline-flex h-8 shrink-0 cursor-pointer items-center justify-center gap-1.5 whitespace-nowrap rounded-md bg-white px-2.5 text-xs font-bold text-main-foreground sm:px-3 sm:text-sm"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const Links = () => {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-external-link w-4 h-4 sm:mr-1.5"
+          className="lucide lucide-external-link h-4 w-4 sm:mr-1.5"
           aria-hidden="true"
         >
           <path d="M15 3h6v6"></path>

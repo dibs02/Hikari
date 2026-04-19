@@ -29,16 +29,21 @@ const Anicontainer = () => {
   }, [hasMore, loadMore, loading, list.length]);
 
   return (
-    <section className="bg-black px-6 pb-4 pt-2 text-white">
+    <section className="bg-black px-4 pb-4 pt-2 text-white sm:px-6">
       <div className="mx-auto max-w-6xl">
-        <div className="mb-9 flex items-center justify-between">
-          <h2 className="text-base text-zinc-400 tracking-wide">
+        <div className="hidden sm:mb-9 sm:flex flex-row sm:items-center sm:justify-between">
+          <h2 className="text-sm tracking-wide text-zinc-400 sm:text-base">
             Showing{" "}
-            <span className="font-bold text-white text-lg">{list.length} </span>
+            <span className="text-base font-bold text-white sm:text-lg">
+              {list.length}{" "}
+            </span>
             animes
           </h2>
-          <p className="text-base text-zinc-400 tracking-wide">
-            Based on <span className="font-bold text-lg text-white">MAL </span>{" "}
+          <p className="text-sm tracking-wide text-zinc-400 sm:text-base">
+            Based on{" "}
+            <span className="text-base font-bold text-white sm:text-lg">
+              MAL{" "}
+            </span>{" "}
             rankings
           </p>
         </div>
