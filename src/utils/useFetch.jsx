@@ -5,7 +5,7 @@ function useFetch() {
 
   useEffect(() => {
     async function handleCall() {
-      const data = await fetch("https://api.jikan.moe/v4/anime?limit=9");
+      const data = await fetch("https://api.jikan.moe/v4/anime?limit=24");
       const json = await data.json();
       setList(json?.data);
     }
