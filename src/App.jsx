@@ -22,7 +22,6 @@ const App = () => {
     >
       <Header isDark={isDark} setIsDark={setIsDark} />
       <HeroSection isDark={isDark} />
-      <div className={`my-5 h-px ${isDark ? "bg-zinc-800" : "bg-zinc-200"}`} />
       <Anicontainer isDark={isDark} />
       <Footer isDark={isDark} />
       <Analytics />

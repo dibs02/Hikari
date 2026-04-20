@@ -8,8 +8,10 @@ const stats = [
 const HeroSection = ({ isDark }) => {
   return (
     <section
-      className={`px-4 pb-10 pt-12 transition-colors duration-500 ease-in-out sm:px-6 sm:pb-12 sm:pt-16 ${
-        isDark ? "bg-black text-white" : "bg-zinc-50 text-zinc-950"
+      className={`border-b px-4 pb-10 pt-12 transition-colors duration-500 ease-in-out sm:px-6 sm:pb-12 sm:pt-16 ${
+        isDark
+          ? "border-zinc-800 bg-black text-white"
+          : "border-zinc-200 bg-zinc-50 text-zinc-950"
       }`}
     >
       <div className="mx-auto flex max-w-6xl flex-col items-center">
